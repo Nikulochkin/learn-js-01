@@ -1,11 +1,10 @@
-var f0 = 0;
-var f1 = 1;
-var f2 = 0;
-console.log(f1);
-console.log(f0);
-var n = process.argv[2];
-for (var i = 0; i < n - 2; i++) {
-  f2 = f1 + f0;
-  f0 = f1;
-  f1 = f2;
-  console.log(f2);
+var arr = [];
+arr[0] = 0;
+arr[1] = 1;
+function doit (titel = ' ', n = process.argv[2]) {
+  for (var i = 1; i < n - 1; i++) {
+    arr[i + 1] = arr[i - 1] + arr[i];
+  }
+  console.log(arr);
+}
+doit(' ');
